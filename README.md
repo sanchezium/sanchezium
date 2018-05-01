@@ -36,9 +36,11 @@ Max coin supply                   27 182 818 (exactly the base of the natural lo
 
 Premined                          1 400 000 (5%)
 
-Burned during ICO                 400 000 SNCZ
+Burned during ICO                 464 588.699286 SNCZ
 
 Burned after ICO                  747 522 SNCZ
+
+Burn Address                      SXXXXXXXXXXXXXXXXXXXXXXXXXXXXFdBi4
 
 First POS block                   141
 
