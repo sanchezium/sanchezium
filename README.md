@@ -36,6 +36,8 @@ Max coin supply                   27 182 818 (exactly the base of the natural lo
 
 Premined                          1 400 000 (5%)
 
+Burned during ICO                 400 000 SNCZ
+
 Burned after ICO                  747 522 SNCZ
 
 First POS block                   141
