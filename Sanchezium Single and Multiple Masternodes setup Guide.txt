@@ -13,8 +13,11 @@ MASTERNODE GUIDE FOR WINDOWS AND LINUX
 
 rpcuser=ANYTHINGHERE
 rpcpassword=ANYTHINGHERE
+daemon=1
+server=1
+staking=1
 listen=1
-allowip=127.0.0.1
+rpcallowip=127.0.0.1
 port=11453
 masternode=1
 masternodeaddr=YourIP:11453
@@ -67,11 +70,14 @@ Now you can follow the same steps of single masternode guide
 
 rpcuser=ANYTHINGHERE
 rpcpassword=ANYTHINGHERE
+daemon=1
+server=1
+staking=1
 listen=1
-allowip=127.0.0.1
+rpcallowip=127.0.0.1
 port=11453
 masternode=1
-masternodeaddr=YOUR-IP:11453
+masternodeaddr=YourIP:11453
 masternodeprivkey=PRIVATEKEYREPLACETHIS
 
 8.Now save and close the config file.
