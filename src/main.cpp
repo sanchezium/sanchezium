@@ -1381,6 +1381,9 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, i
         if (nHeight <= 10080) {
           nSubsidy = STATIC_POS_REWARD;
         }
+        else if (nHeight <= 10800 && nHeight > 10080) {
+          nSubsidy = 24 * COIN;
+        }
         else if (nHeight <= 40320 && nHeight > 10800) {
           nSubsidy = 17 * COIN;
         }
@@ -1390,8 +1393,17 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, i
         else if (nHeight <= 120960 && nHeight > 80640) {
           nSubsidy = 20 * COIN;
         }
-        else {
+	else if (nHeight <= 203386 && nHeight > 120960) {
           nSubsidy = 24 * COIN;
+        }
+	else if (nHeight <= 233626 && nHeight > 203386) {
+          nSubsidy = 15 * COIN;
+        }
+	else if (nHeight <= 263866 && nHeight > 233626) {
+          nSubsidy = 10 * COIN;
+        }
+        else {
+          nSubsidy = 5 * COIN;
         }
     }
     return nSubsidy + nFees;

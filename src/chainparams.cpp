@@ -62,8 +62,8 @@ public:
         pchMessageStart[2] = 0x1c;
         pchMessageStart[3] = 0x23;
         vAlertPubKey = ParseHex("0494db136f95dea1344a0b7bd61243430436bf50483c32d764c689290a39787a48e374766eb0bb75516ab68c6d4aef797bfcca77b2fb733eb79ff500912e64a900");
-        nDefaultPort = 11453;
-        nRPCPort = 11454;
+        nDefaultPort = 11463;
+        nRPCPort = 11464;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 16);
 
         // Build the genesis block. Note that the output of the genesis coinbase cannot
@@ -112,7 +112,7 @@ public:
         //strSporkKey = "046f78dcf911fbd61910136f7f0f8d90578f68d0b3ac973b5040fb7afb501b5939f39b108b0569dca71488f5bbf498d92e4d1194f6f941307ffd95f75e76869f0e";
         //strMasternodePaymentsPubKey = "046f78dcf911fbd61910136f7f0f8d90578f68d0b3ac973b5040fb7afb501b5939f39b108b0569dca71488f5bbf498d92e4d1194f6f941307ffd95f75e76869f0e";
         strDarksendPoolDummyAddress = "S2zacZSSko82D3jX8fg9CFQomYkwBbJahm";
-        nLastPOWBlock = 140;
+        nLastPOWBlock = 200000;
         nPOSStartBlock = 140;
     }
 
@@ -145,8 +145,8 @@ public:
         pchMessageStart[3] = 0x1f;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 16);
         vAlertPubKey = ParseHex("0494db136f95dea1344a0b7bd61243430436bf50483c32d764c689290a39787a48e374766eb0bb75516ab68c6d4aef797bfcca77b2fb733eb79ff500912e64a900");
-        nDefaultPort = 11455;
-        nRPCPort = 11456;
+        nDefaultPort = 11465;
+        nRPCPort = 11466;
         strDataDir = "testnet";
 
         // Modify the testnet genesis block so the timestamp is valid for a later start.
