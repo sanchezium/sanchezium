@@ -52,7 +52,7 @@ Staking age                       2 hours
 
 Ticker                            SNCZ
 
-Masternode price                  2500 SNCZ
+Masternode price                  10000 SNCZ
 
 Difficulty retargeting            every block
 
@@ -66,4 +66,12 @@ Fun and prizes                    500 SNCZ are given randomly every week
 
 80640-120960 block reward         20 SNCZ
 
-120960 and higher block reward    24 SNCZ
+120960-203386 block reward        24 SNCZ
+
+Fork at block height  -  196013
+
+203386-233626 block reward        15 SNCZ
+
+233626-263866 block reward        10 SNCZ
+
+263866 and after                   5 SNCZ
