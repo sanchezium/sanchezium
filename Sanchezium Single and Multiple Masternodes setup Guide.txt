@@ -18,9 +18,9 @@ server=1
 staking=1
 listen=1
 rpcallowip=127.0.0.1
-port=11453
+rpcport=11464
 masternode=1
-masternodeaddr=YourIP:11453
+masternodeaddr=YourIP:11463
 masternodeprivkey=PRIVATEKEYREPLACETHIS
 
 
@@ -75,9 +75,9 @@ server=1
 staking=1
 listen=1
 rpcallowip=127.0.0.1
-port=11453
+rpcport=11464
 masternode=1
-masternodeaddr=YourIP:11453
+masternodeaddr=YourIP:11463
 masternodeprivkey=PRIVATEKEYREPLACETHIS
 
 8.Now save and close the config file.
