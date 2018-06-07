@@ -22,7 +22,7 @@ Download compiled wallets: http://sanchezium.com/#download
 
 Compiled daemon for Ubuntu 14.04 LTS is included in the repository.
 
-Port: 11453 RPC Port: 11454
+Port: 11463 RPC Port: 11464
 
 See INSTALL for instructions on installing and running Sanchezium daemon and wallets.
 
