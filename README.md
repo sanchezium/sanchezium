@@ -1,3 +1,8 @@
+UPDATE:
+ON VERSION 2.0 IT IS MANDATORY TO USE BOOTSTRAP FILE AND ADD IT TO THE SAME DIRECTORY AS YOUR WALLET .DAT
+This will prevent everyone to end up in the wrong blockchain.
+http://sanchezium.com/downloads/bootstrap.dat
+
 # Sanchezium
 Sanchezium - SNCZ
 http://sanchezium.com
