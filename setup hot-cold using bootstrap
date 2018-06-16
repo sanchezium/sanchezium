@@ -1,0 +1,150 @@
+MASTERNODE GUIDE FOR WINDOWS AND LINUX
+
+1.Open and Run the Sanchezium-qt.exe wallet for the first time, if you are using Windows.
+2.Your firewall and antivirus might pop up to allow connection. Please allow the connections by making appropriate tick marks.
+3.Immediately stop and exit your wallet.
+4.Download the bootstrap file and add it to C:/users/***Your windows username***/appdata(hidden)/roaming/Sanchezium "http://sanchezium.com/downloads/bootstrap.dat"
+5 Restart your wallet
+6.In the lower left hand corner of the User Interface, you will see “Importing blocks” and other sync messages each time you open your Sanchezium Wallet. If there is a problem synchronizing, it may say “No Block Source Available” instead. If this happens, just close and re-open the wallet until it synchronizes. 
+7.Go to Help -> Debug Console.
+8.In the Console window enter getaccountaddress 0 and copy the result. This is your MASTERNODE DEPOSIT ADDRESS, where you will deposit the coins to create a masternode. Pay 10000 Sanchezium exactly into this address. No more, no less.
+-·Wait for the 1 confirmation of the transaction.
+9.In the Console Debug window enter masternode genkey and copy the result. This is your MASTERNODE PRIVKEY.
+10.Open Configuration File in Notepad, if you are using Windows. This config file is located at C:/users/***Your windows username***/appdata(hidden)/roaming/Sanchezium  Then paste in the following.
+
+rpcuser=ANYTHINGHERE
+rpcpassword=ANYTHINGHERE
+daemon=1
+server=1
+staking=1
+listen=1
+rpcallowip=127.0.0.1
+rpcport=11464
+masternode=1
+masternodeaddr=YourIP:11463
+masternodeprivkey=PRIVATEKEYREPLACETHIS
+
+
+11.Now save and close the config file.
+12.Close the wallet by going to File -> Exit.
+Open the Sanchezium Wallet again by running Sanchezium-qt.exe. This is how you will always start the wallet going forward.
+13. Wait for 15 confirmations of the transaction of 10000 coins.
+Go to Tools -> Debug Console. Enter masternode start. You will see the response “Masternode started successfully”. Congratulations, your masternode is now running.
+Now click the Masternodes tab that is now visible. You should see your new masternode appear in the list with the status PRE_ENABLE.
+This will change to ENABLED after a small amount of time. All masternodes need to be active for a certain amount of blocks before they are recognized by the network and eligible for rewards.
+
+This guide assumes you already have a vps ordered and putty connected to it as root
+First some basics.
+
+Create a Swap File - Low Ram Servers
+ sudo fallocate -l 4G /swapfile
+ sudo chmod 600 /swapfile
+ sudo mkswap /swapfile
+ sudo swapon /swapfile
+ sudo nano /etc/fstab
+
+Add to fstab file by using arrow down and pasting the following on the file after all that already is there
+/swapfile   none    swap    sw    0   0
+
+once done press CTRL x
+press y
+press enter  # done
+
+These are the dependencies listed on most coin repositories
+
+Dependency Build Instructions: Ubuntu & Debian
+----------------------------------------------
+sudo apt-get install build-essential -y
+sudo apt-get install libssl-dev -y
+sudo apt-get install libdb++-dev -y
+sudo apt-get install libboost-all-dev -y
+sudo apt-get install libqrencode-dev -y
+
+I have included some extras that help bypass some of the issues and are not mentioned as dependencies on the documentation of most coins.
+
+sudo apt-get install libtool autotools-dev automake pkg-config libevent-dev bsdmainutils libgmp3-dev -y
+
+On at least Ubuntu 14.04+ and Debian 7+ there are generic names for the individual boost development packages, so the following can be used to only install necessary parts of boost:
+
+sudo apt-get install libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev -y
+
+
+This is a must to avoid errors
+
+sudo apt-get install software-properties-common -y
+sudo add-apt-repository ppa:bitcoin/bitcoin
+sudo apt-get update
+sudo apt-get install libdb4.8-dev libdb4.8++-dev -y
+
+sudo apt-get install libminiupnpc-dev -y
+sudo apt-get install libzmq3-dev -y
+
+cd /home
+
+git clone https://github.com/bitcoin-core/secp256k1.git
+
+cd secp256k1/
+./autogen.sh
+./configure
+  make
+./tests
+sudo make install  # optional
+
+cd ..
+
+git clone https://github.com/sanchezium/sanchezium.git
+cd sanchezium/src
+make -f makefile.unix
+
+grab yourself a drink while the wallet compiles
+ 
+all should be installed and you can start your daemon
+ 
+ ./Sancheziumd -daemon
+ ./Sancheziumd stop
+ 
+ cd /root/.Sanchezium
+ wget http://sanchezium.com/downloads/bootstrap.dat
+ 
+ cd /home/sanchezium/src
+ ./Sancheziumd -daemon
+ 
+once you synced your wallet go to:
+ 
+ cd /root/.Sanchezium
+ nano Sanchezium.conf
+
+this will open config file all you need to do is paste the following and amend accordingly
+
+rpcuser=ANYTHINGHERE
+rpcpassword=ANYTHINGHERE
+daemon=1
+server=1
+staking=1
+listen=1
+rpcallowip=127.0.0.1
+rpcport=11464
+masternode=1
+masternodeaddr=YourIP:11463
+masternodeprivkey=PRIVATEKEYREPLACETHIS
+
+please make sure that the info for the masternode section matches your local wallet on your computer.
+
+once this is done press 
+CTRL x
+
+then press y and press ENTER
+
+Go back to your wallet/src directory stop the daemon and restart it again.
+
+now vps side is done we need to go to the local wallet to start the masternode.
+
+if you only have 1 masternode in your wallet go to console and type
+
+masternode start
+
+if you have more than one you can run a simlar command
+
+masternode start-many
+
+happy masternoding
